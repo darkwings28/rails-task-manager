@@ -1,0 +1,13 @@
+<div class="container">
+  <h2><%= @task.title %></h2>
+  <p>Details: <%= @task.details %></p>
+
+  <input type="checkbox" id="completedCheckbox" <%= 'checked' if @task.completed? %> >
+    <% if @task.completed? %> 
+      Task Complete
+    <% else %>
+      Task not complete
+    <% end %>
+    <%= link_to 'back', tasks_path, class: 'btn btn-sm btn-primary col-3' %>
+    <%= link_to 'Add a new task', new_task_path, class: 'btn btn-sm btn-primary' %> 
+</div>
